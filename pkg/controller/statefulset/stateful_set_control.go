@@ -79,7 +79,6 @@ func (ssc *defaultStatefulSetControl) UpdateStatefulSet(set *apps.StatefulSet, p
 	if err != nil {
 		return err
 	}
-	history.SortControllerRevisions(revisions)
 
 	// get the current, and update revisions
 	currentRevision, updateRevision, collisionCount, err := ssc.getStatefulSetRevisions(set, revisions)
